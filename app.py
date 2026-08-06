@@ -14,6 +14,7 @@ st.markdown("""
         background-color: #0a0a0a; 
         color: #00ffff; 
         border: 1px solid #8a2be2; 
+        caret-color: #00ffff;
     }
     
     /* Standard Generate Button */
@@ -120,7 +121,7 @@ if st.button("🚀 GENERATE PDF"):
                     with open(path, "rb") as f:
                         encoded_string = base64.b64encode(f.read()).decode()
                     mime = "image/png" if path.endswith('.png') else "image/jpeg"
-                    img_tag = f'<img src="data:{mime};base64,{encoded_string}" style="height: 110px; width: auto; display: block; margin: 0 auto;">'
+                    img_tag = f'<img src="data:{mime};base64,{encoded_string}" style="height: 200px; width: auto; display: block; margin: 0 auto;">'
                     break
 
             html_content = f"""
