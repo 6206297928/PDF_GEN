@@ -18,7 +18,7 @@ st.markdown(
         background-color: #0a0a0a; 
         color: #00ffff; 
         border: 1px solid #8a2be2; 
-        caret-color: #00ffff;
+        caret-color: #000000;
     }
     
     /* Standard Generate Button */
