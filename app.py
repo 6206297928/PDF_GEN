@@ -23,10 +23,10 @@ st.markdown(
         caret-color: #00ffff;
     }
 
-    /* Text Area (Content boxes with black caret cursor) */
+    /* Text Area (Black font color and white background) */
     .stTextArea > div > div > textarea, textarea { 
-        background-color: #0a0a0a; 
-        color: #000000; 
+        background-color: #ffffff !important; 
+        color: #000000 !important; 
         border: 1px solid #8a2be2; 
         caret-color: #000000 !important;
     }
