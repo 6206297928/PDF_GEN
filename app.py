@@ -14,11 +14,21 @@ st.markdown(
     <style>
     .stApp { background-color: #000000; color: #ffffff; }
     h1, h2, h3, label { color: #00ffff !important; }
-    .stTextInput > div > div > input, .stTextArea > div > div > textarea { 
+    
+    /* Text Inputs */
+    .stTextInput > div > div > input { 
         background-color: #0a0a0a; 
         color: #00ffff; 
         border: 1px solid #8a2be2; 
-        caret-color: #000000;
+        caret-color: #00ffff;
+    }
+
+    /* Text Area (Content boxes with black caret cursor) */
+    .stTextArea > div > div > textarea, textarea { 
+        background-color: #0a0a0a; 
+        color: #00ffff; 
+        border: 1px solid #8a2be2; 
+        caret-color: #000000 !important;
     }
     
     /* Standard Generate Button */
