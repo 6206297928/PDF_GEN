@@ -27,7 +27,8 @@ st.markdown(
     .stTextArea > div > div > textarea, textarea { 
         background-color: #ffffff !important; 
         color: #000000 !important; 
-        border: 1px solid #8a2be2; 
+        border: 1px solid #8a2be2;
+        border-radius: 8px;
         caret-color: #000000 !important;
     }
     
