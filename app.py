@@ -20,15 +20,16 @@ st.markdown(
         background-color: #0a0a0a; 
         color: #00ffff; 
         border: 1px solid #8a2be2; 
+        border-radius: 8px !important;
         caret-color: #00ffff;
     }
 
-    /* Text Area (Black font color and white background) */
+    /* Text Area (Black font color and white background with rounded corners) */
     .stTextArea > div > div > textarea, textarea { 
         background-color: #ffffff !important; 
         color: #000000 !important; 
-        border: 1px solid #8a2be2;
-        border-radius: 8px;
+        border: 1px solid #8a2be2; 
+        border-radius: 8px !important;
         caret-color: #000000 !important;
     }
     
@@ -38,6 +39,7 @@ st.markdown(
         color: #000000; 
         font-weight: bold; 
         border: none; 
+        border-radius: 8px !important;
         width: 100%;
         text-transform: uppercase;
         margin-bottom: 5px;
@@ -50,6 +52,7 @@ st.markdown(
         color: #000000;
         font-weight: bold;
         border: none;
+        border-radius: 8px !important;
         width: 100%;
         text-transform: uppercase;
         margin-top: 10px;
@@ -64,6 +67,7 @@ st.markdown(
     div[data-testid="stVerticalBlock"] div:has(> button.step-up) button {
         background-color: #8a2be2;
         color: #ffffff;
+        border-radius: 8px !important;
     }
     div[data-testid="stVerticalBlock"] div:has(> button.step-up) button:hover {
         background-color: #00ffff;
@@ -139,6 +143,18 @@ st.markdown("<hr style='border-color: #8a2be2;'>", unsafe_allow_html=True)
 
 # Helper function to sanitize text for standard FPDF Helvetica font
 def clean_text(text: str) -> str:
+    replacements = {
+        "–": "-",  # En-dash (fixes the ? issue)
+        "—": "-",  # Em-dash
+        "‘": "'",  # Single quote left
+        "’": "'",  # Single quote right
+        "“": '"',  # Double quote left
+        "”": '"',  # Double quote right
+        "•": "-",  # Bullet point
+        "…": "...",  # Ellipsis
+    }
+    for char, repl in replacements.items():
+        text = text.replace(char, repl)
     return text.encode("latin-1", "replace").decode("latin-1")
 
 
@@ -210,7 +226,7 @@ if st.button("🚀 GENERATE PDF"):
                     pdf.set_text_color(0, 0, 0)
 
                     items = [
-                        line.strip().lstrip("•").strip()
+                        line.strip()
                         for line in sec_content.replace(",", "\n").split("\n")
                         if line.strip()
                     ]
@@ -218,7 +234,7 @@ if st.button("🚀 GENERATE PDF"):
                         pdf.multi_cell(
                             0,
                             5,
-                            txt=clean_text(f"- {item.upper()}"),
+                            txt=clean_text(item.upper()),
                             new_x="LMARGIN",
                             new_y="NEXT",
                         )
