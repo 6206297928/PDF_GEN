@@ -126,6 +126,11 @@ st.markdown("</div>", unsafe_allow_html=True)
 st.markdown("<hr style='border-color: #8a2be2;'>", unsafe_allow_html=True)
 
 
+# Helper function to sanitize text for standard FPDF Helvetica font
+def clean_text(text: str) -> str:
+    return text.encode("latin-1", "replace").decode("latin-1")
+
+
 # Pure Python PDF Builder using FPDF2
 class WorkoutPDF(FPDF):
 
@@ -166,7 +171,7 @@ if st.button("🚀 GENERATE PDF"):
             pdf.cell(
                 0,
                 10,
-                txt=client_title.upper(),
+                txt=clean_text(client_title.upper()),
                 border=False,
                 align="C",
                 new_x="LMARGIN",
@@ -183,7 +188,7 @@ if st.button("🚀 GENERATE PDF"):
                     pdf.cell(
                         0,
                         8,
-                        txt=sec_title.strip().upper(),
+                        txt=clean_text(sec_title.strip().upper()),
                         border=False,
                         new_x="LMARGIN",
                         new_y="NEXT",
@@ -202,7 +207,7 @@ if st.button("🚀 GENERATE PDF"):
                         pdf.multi_cell(
                             0,
                             5,
-                            txt=f"- {item.upper()}",
+                            txt=clean_text(f"- {item.upper()}"),
                             new_x="LMARGIN",
                             new_y="NEXT",
                         )
