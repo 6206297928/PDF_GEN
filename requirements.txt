@@ -4,44 +4,40 @@ altair==6.2.2
     # via streamlit
 anyio==4.14.2
     # via
-    #   starlette
-    #   streamlit
+    #    starlette
+    #    streamlit
 attrs==26.1.0
     # via
-    #   jsonschema
-    #   referencing
+    #    jsonschema
+    #    referencing
 blinker==1.9.0
     # via streamlit
-brotli==1.2.0
-    # via fonttools
 certifi==2026.7.22
     # via requests
-cffi==2.1.1
-    # via weasyprint
 charset-normalizer==3.4.9
     # via requests
 click==8.4.2
     # via
-    #   streamlit
-    #   uvicorn
-cssselect2==0.9.0
-    # via weasyprint
-fonttools==4.63.0
-    # via weasyprint
+    #    streamlit
+    #    uvicorn
+defusedxml==0.7.1
+    # via fpdf2
+fpdf2==2.8.2
+    # via pdf-gen (pyproject.toml)
 h11==0.16.0
     # via uvicorn
 httptools==0.8.0
     # via streamlit
 idna==3.18
     # via
-    #   anyio
-    #   requests
+    #    anyio
+    #    requests
 itsdangerous==2.2.0
     # via streamlit
 jinja2==3.1.6
     # via
-    #   altair
-    #   pydeck
+    #    altair
+    #    pydeck
 jsonschema==4.26.0
     # via altair
 jsonschema-specifications==2025.9.1
@@ -52,45 +48,39 @@ narwhals==2.24.0
     # via altair
 numpy==2.5.1
     # via
-    #   pandas
-    #   pydeck
-    #   streamlit
+    #    pandas
+    #    pydeck
+    #    streamlit
 packaging==26.3
     # via
-    #   altair
-    #   streamlit
+    #    altair
+    #    streamlit
 pandas==3.0.5
     # via streamlit
 pillow==12.3.0
     # via
-    #   streamlit
-    #   weasyprint
+    #    fpdf2
+    #    streamlit
 protobuf==7.35.1
     # via streamlit
 pyarrow==24.0.0
     # via streamlit
-pycparser==3.0
-    # via cffi
 pydeck==0.9.3
     # via streamlit
-pydyf==0.12.1
-    # via weasyprint
-pyphen==0.17.2
-    # via weasyprint
 python-dateutil==2.9.0.post0
     # via pandas
 python-multipart==0.0.32
     # via streamlit
 referencing==0.37.0
     # via
-    #   jsonschema
-    #   jsonschema-specifications
+    #    jsonschema
+    #    jsonschema-specifications
 requests==2.34.2
     # via streamlit
 rpds-py==2026.6.3
     # via
-    #   jsonschema
-    #   referencing
+    #    jsonschema
+    #    referencing
 six==1.17.0
     # via python-dateutil
 starlette==1.4.0
@@ -99,32 +89,17 @@ streamlit==1.61.0
     # via pdf-gen (pyproject.toml)
 tenacity==9.1.4
     # via streamlit
-tinycss2==1.5.1
-    # via
-    #   cssselect2
-    #   weasyprint
-tinyhtml5==2.1.0
-    # via weasyprint
 toml==0.10.2
     # via streamlit
 typing-extensions==4.16.0
     # via
-    #   altair
-    #   streamlit
+    #    altair
+    #    streamlit
 urllib3==2.7.0
     # via requests
 uvicorn==0.52.1
     # via streamlit
 watchdog==6.0.0
     # via streamlit
-weasyprint==69.0
-    # via pdf-gen (pyproject.toml)
-webencodings==0.5.1
-    # via
-    #   cssselect2
-    #   tinycss2
-    #   tinyhtml5
 websockets==16.1.1
     # via streamlit
-zopfli==0.4.3
-    # via fonttools
